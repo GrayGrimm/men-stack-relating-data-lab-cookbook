@@ -10,6 +10,8 @@ const session = require('express-session');
 
 
 const authController = require("./controllers/auth.js")
+const foodController = require('./controllers/food.js')
+
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";
@@ -36,20 +38,12 @@ app.use(
 );
 
 app.use("/auth", authController)
+app.use('/user/:userId/foods', foodController)
 
 app.get("/", async (req, res) => {
   res.render("index.ejs", {
     user: req.session.user
   });
-});
-
-app.get('/vip-lounge', (req, res) => {
-    if (req.session.user){
-       res.send(`Welcome to the party ${req.session.user.username}.`);
-    } else {
-        res.send('Sorry, no quests allowed.');
-    };
-   
 });
 
 
