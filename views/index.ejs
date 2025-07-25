@@ -12,6 +12,7 @@
 
   <% if (user) { %>
     <h1>Welcome to Your Cookbook! <%= user.username %>!</h1>
+    <a href="/users/<%= user._id %>/foods/new"> Add a new ingrediant to your pantry! </a>
     <p>
       <a href="/auth/sign-out">Sign Out</a>
     </p>
