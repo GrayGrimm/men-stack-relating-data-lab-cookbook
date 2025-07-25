@@ -1,4 +1,4 @@
-const { default: mongoose } = require('mongoose')
+const mongoose = require('mongoose')
 const morgan = require('mongoose')
 
 const foodSchema = new mongoose.Schema({

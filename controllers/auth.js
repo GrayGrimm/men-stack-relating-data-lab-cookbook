@@ -26,7 +26,6 @@ router.post("/sign-up", async (req, res) => {
     const user = await User.create(req.body);
     res.send(`Thanks for signing up ${user.username}`)
 
-    res.send("Form Submission Accepted!");
 });
 
 router.get("/sign-in", (req, res) => {
