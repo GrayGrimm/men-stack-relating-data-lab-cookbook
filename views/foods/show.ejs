@@ -12,7 +12,13 @@
 <body>
 
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= currentFood.name %></h1>
+        <h1>
+            <%= currentFood.name %>
+        </h1>
+
+        <form action="/users/<%= user._id %>/foods/<%= currentFood._id %>?_method=DELETE" method="POST">
+            <button type="submit">Remove from pantry</button>
+        </form>
 
 </body>
 

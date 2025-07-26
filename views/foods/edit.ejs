@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        <%= currentFood.name %>Edit Page
+    </title>
 </head>
+
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>This is the edit page</h1>
+        <h1>This is the edit page for <%= currentFood.name %>
+        </h1>
+        <form action="/users/<%= user._id %>/foods/<%= currentFood._id %>?_method=PUT" method="POST">
+            <label for="name">Name:</label>
+            <input 
+            type="text"
+            name="name"
+            id="name"
+            value="<%= currentFood.name %>"
+            />
+            <button type="submit">Update Pantry</button>
+        </form>
 </body>
+
 </html>
